@@ -12,4 +12,4 @@ view:
 
 clean:
 	# clean all latex compilation units
-	rm -f {paper/,}*.{aux,toc,log}
+	rm -f {paper/,}*.{aux,toc,log,bbl,blg}
