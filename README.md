@@ -12,6 +12,9 @@ The repository is maintained by:
 
 +	...
 
+The contents of the repository fall under the MIT License which is distributed alongside with 
+the contents in the LICENSE file.
+
 Compilation
 -----------
 	
