@@ -1,21 +1,44 @@
-\documentclass[a4paper]{article}
+\documentclass[twocolumn,a4paper]{article}
 
+	% meta info goes here
 	\author{A.J. Rouvoet\\ a.j.rouvoet@gmail.com \\ 4036964}
 	\title{Digital reconstruction of faded ink drawings}
 
+	% package deps
+	\usepackage{natbib}
+	\usepackage{graphicx}
+
+	% do not indent new paragraphs
+	\setlength\parindent{0pt}
+
 \begin{document}
 
-	\maketitle
+	% use a one column layout
+	% for the abstract, title and toc
+	\twocolumn[
+		\begin{@twocolumnfalse}
+			\maketitle
 
-	\section*{Abstract}
-		
-		Here comes the abstract... with a test citation \cite{levin2004colorization}
+			\begin{abstract}
+				Here comes the abstract... with a test citation \cite{levin2004colorization}
+			\end{abstract}
 
-	\tableofcontents
+			\tableofcontents
+		\end{@twocolumnfalse}
+	]
 
+	% include other sections of the paper here
 	\include{introduction}
+	\include{optimization}
+	% end of sections
 
-	\bibliographystyle{apalike}
-	\bibliography{bibliography}
+	% use a one column layout
+	% for the bibliography
+	\twocolumn[
+		\begin{@twocolumnfalse}
+			\bibliographystyle{apalike}
+			\bibliography{bibliography}
+		\end{@twocolumnfalse}
+	]
 
 \end{document}

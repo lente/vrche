@@ -1,0 +1,20 @@
+% chapter about the `colorization using optimization` technique
+\section{Colorization using optimization}
+	
+	Another technique for (re)coloring images is proposed by \citet{levin2004colorization}.
+	They posed that any any pixel's color should not differ too much from the colors of it's 
+	neighbours.
+	That is: given any pixel, the difference between it's color and the weighted sum of it's
+	neighbours colors should be minimal:
+
+	\begin{equation}
+		J(U) = \sum_r \left ( U(r) - \sum_{s \in N(r)} w_rs \cdot U(s) \right )^2
+	\end{equation}
+
+	Where $U(r)$ is the color of a pixel $r = (x,y)$ and $N(r)$ is the set of neighbours of $r$ 
+	(any pixel in a given neighbourhood).
+	The key in this equation is the weighting function $w_rs$.
+	It determines how much the color of $r$ will be like the color of $s$.
+	\citet{levin2004colorization} propose the use of two possible weighting functions,
+	both relying on the luminance difference between $r$ and $s$.
+	
