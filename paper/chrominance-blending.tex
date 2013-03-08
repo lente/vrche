@@ -1,0 +1,31 @@
+% comments and short explanation on the algorithm explained in "Fast
+% Image and Video Colorization Using Chrominanche Blending"
+
+\section{Fast Image and Video Colorization Using Chrominance
+  Blending}
+
+        In their paper \cite{yatziv2006fast} describe an algorithm to
+        (re)colorize black and white images using scribbles thereon of color
+        information\footnote{The supplied information is assumed to be correct
+        however, this could also be an approximation of the correct color or
+        location where this color should be.}. It is observed that in an
+        original picture, the local difference in chrominance is roughly
+        proportional to the local difference in luminance for each pixel.\\
+        \\
+        Based on this observation a simple algorithm is proposed. Every pixel
+        that needs to be (re)colored will have the color of the weighed
+        average of all the pixels in the scribble, where the weight is based
+        on the geodesic distance to that pixel\footnote{Where each pixel is
+        seen as a point $(x, y, Y)$ with $Y$ the luminance of the
+        pixel}.
+
+        \subsection{applicability}
+                This algorithm in it's current form seems too
+                laborious to apply in the aforementioned context. It
+                is likely that stricter assumptions can be made for
+                monochramatic pictures, based on which this algorithm
+                can be adapted for this problem. It is interesting to
+                note that this is relatively insensitive to small
+                errors introduced when manually placing the scribbles,
+                this due to the use of geodesic distance as a weighing factor.
+        
